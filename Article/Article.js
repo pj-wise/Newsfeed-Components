@@ -161,7 +161,7 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
    articleReadBtn.addEventListener('click', removeArticle);
 
    function removeArticle() {
-     article.style.display = 'none'
+     articles.removeChild(article);
    }
 
   return article
