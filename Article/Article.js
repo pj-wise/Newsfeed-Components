@@ -125,6 +125,7 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   const articleSecondParagraph = document.createElement('p');
   const articleThirdParagraph = document.createElement('p');
   const articleBtn = document.createElement('span');
+  const articleReadBtn = document.createElement('span');
 
   //structure
   article.appendChild(articleTitle)
@@ -133,11 +134,13 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   article.appendChild(articleSecondParagraph)
   article.appendChild(articleThirdParagraph)
   article.appendChild(articleBtn)
+  article.appendChild(articleReadBtn)
 
   //setting class names
   article.classList.add('article')
   articleDate.classList.add('date')
   articleBtn.classList.add('expandButton')
+  articleReadBtn.classList.add('closeButton')
 
   //setting text content 
   articleTitle.textContent = title
@@ -146,12 +149,19 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   articleSecondParagraph.textContent = secondParagraph
   articleThirdParagraph.textContent = thirdParagraph
   articleBtn.textContent = 'Expand'
+  articleReadBtn.textContent = 'Finished Reading'
 
   //button event
   articleBtn.addEventListener('click', expandArticle);
 
   function expandArticle() {
     article.classList.toggle('article-open')
+   }
+
+   articleReadBtn.addEventListener('click', removeArticle);
+
+   function removeArticle() {
+     article.style.display = 'none'
    }
 
   return article

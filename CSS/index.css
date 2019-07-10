@@ -102,6 +102,16 @@
   transform: translate(-50%);
   background-color: white;
 }
+.article .closeButton {
+  position: absolute;
+  bottom: 5px;
+  left: 88%;
+  font-size: 15px;
+  color: red;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid red;
+}
 .article-open {
   height: 400px;
 }
